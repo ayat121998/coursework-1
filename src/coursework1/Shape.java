@@ -5,13 +5,15 @@
  */
 package coursework1;
 
+import java.io.Serializable;
+
 
 
 /**
  *
  * @author M00557670
  */
-public abstract class Shape {
+public abstract class Shape implements Serializable{
    final int _numberOfSides;
    final String _name;
    
@@ -20,8 +22,7 @@ public abstract class Shape {
        _name = name;
        
    }
-   public abstract double getArea();
-   public abstract double getPerimeter();
+ 
    public void displayDescription(){
        System.out.println("I'm a shape name " + _name);
    }

@@ -5,11 +5,18 @@
  */
 package coursework1;
 
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;;
 
 
 
@@ -18,47 +25,99 @@ import java.util.Scanner;
  *
  * @author Administrator
  */
-public class Server extends ClientServer {
-    
-    private int _port;
+public class Server  {
+      private static ArrayList<Shape> shapesArray = new ArrayList<Shape>();
 
-    public Server(int port) {
-        try{
-        final ServerSocket server = new ServerSocket(5555);
-        final Socket clientConnection = server.accept();
-        final PrintWriter out = new PrintWriter(clientConnection.getOutputStream(), true);
-        final Scanner in = new Scanner(clientConnection.getInputStream());
-        while (in.hasNext()) {
-            final String clientRequest = in.nextLine();
-            if (!clientRequest.isEmpty()) {
-                out.println("Request recieved '" + clientRequest.toUpperCase() + "'");
+    private static ObjectOutputStream shapeToClient;
+    private static ObjectInputStream shapeFromClient;
+
+    private static ServerSocket serverSocket;
+    private static Socket socket;
+    
+    public static void main(String[] args) {
+    System.out.println ("server started");
+    
+    
+    try{
+    while (true) {
+    
+                serverSocket = new ServerSocket(5555);
+                
+                socket = serverSocket.accept();
+                
+                System.out.println("connect ");
+                shapeToClient = new ObjectOutputStream(socket.getOutputStream());
+                
+                shapeFromClient = new ObjectInputStream(socket.getInputStream());
+                
+                //Shapes clientShape = (Shapes)shapeFromClient.readObject();
+                
+                readObject();
+                
+                //shapesArray.add(clientShape);
+              //  System.out.println(shapesArray.get(0).getName());
+
             }
+    
+    }catch(Exception e){
+        System.out.println(e);
+    }
+    
+    
+    }
+    
+    public static void readObject(){
+        try{
+            
+                
+            Shape clientShape = (Shape)shapeFromClient.readObject();
+            
+        } catch (Exception e){
+            System.out.println("ERROR: " + e.getMessage());
         }
     }
-    catch (IOException ex) {
+
+    Server(int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+
+
     
-            System.out.println("Error:" + ex.getMessage());
-    }}
-       public void start(){
-               
-       }
-       public static void main(String[] args) {
- 
+ /*  
+    private int _port;
+    Server(int port) {
+      _port = port;
+    }
+
+    public void start() {
 
         
-    /*try{
-    final ServerSocket server = new ServerSocket(5555);
-    final Socket clientConnection = server.accept();
-    final PrintWriter out = new PrintWriter(clientConnection.getOutStream(), true);
-    final Scanner in = new Scanner(clientConnection.getInputStream());
-    while (in.hasNext()) {
-        final String clienRequest = in.nextLine();
-        if (!clientRequest = inEmpty()) {
-            out.println("Request recieved '" + clientRequest.toUpperCase()+ "'");
+        try {
+            final ServerSocket server = new ServerSocket(_port);
+
+            final Socket clientConnection = server.accept();
+
+            final PrintWriter out = new PrintWriter(clientConnection.getOutputStream(), true);
+
+            final Scanner in = new Scanner(clientConnection.getInputStream());
+
+            while (in.hasNext()) {
+
+                final String clientRequest = in.nextLine();
+
+                if (!clientRequest.isEmpty()) {
+
+                    out.println("Request received '" + clientRequest.toUpperCase() + "'");
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
         }
-        }
-} catch (IOException ex) {
-System.out.println("Error:" + ex.getMessage());
+    }
+}
 */
-        
-    }}

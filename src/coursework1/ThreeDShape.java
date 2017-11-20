@@ -15,6 +15,15 @@ public abstract class ThreeDShape extends Shape {
 
     public ThreeDShape(int numberOfSides, String name) {
         super(numberOfSides, name);
+        
+        
+    }
+    public double getVolume() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double getSA() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
