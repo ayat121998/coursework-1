@@ -9,7 +9,7 @@ package coursework1;
 
 /**
  *
- * @author M00558529
+ * @author M00557670
  */
 public abstract class ThreeDShape extends Shape {
 

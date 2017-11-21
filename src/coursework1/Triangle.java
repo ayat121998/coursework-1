@@ -7,7 +7,7 @@ package coursework1;
 
 /**
  *
- * @author M00558529
+ * @author M00557670
  */
 public class Triangle extends TwoDShape {
     private  double _side1;
