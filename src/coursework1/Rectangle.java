@@ -7,7 +7,7 @@ package coursework1;
 
 /**
  *
- * @author M00557670
+ * @author M00558529
  */
 public class Rectangle extends TwoDShape {
 

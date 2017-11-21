@@ -9,7 +9,7 @@ package coursework1;
 
 /**
  *
- * @author M00557670
+ * @author M00558529
  */
 public abstract class ThreeDShape extends Shape {
 
@@ -23,21 +23,3 @@ public abstract class ThreeDShape extends Shape {
     
     public abstract double getVolume();
 }
-
-
-
-   /* public ThreeDShape(int numberOfSides, String name) {
-        super(numberOfSides, name);
-        
-        
-    }
-    public double getVolume() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public double getSA() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-}
-*/

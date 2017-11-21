@@ -1,22 +1,19 @@
-/*
+
+package coursework1;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package coursework1;
-
-
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
- * @author Administrator
+ * @author M00557670
  */
 public class Client  {
 
@@ -210,29 +207,4 @@ public class Client  {
             } else {
                 System.out.println("Please enter a valid input");
                 System.out.println();
-            }
-            try {
-                final Socket Client = new Socket("127.0.0.1", 5555);
-
-                final PrintWriter out = new PrintWriter(client.getOutputStream(), true);
-
-                final Scanner in = new Scanner(client.getInputStream());
-
-                final Scanner userIn = new Scanner(System.in);
-
-                while (true) {
-                    System.out.print("Enter request: ");
-
-                    final String userInput = userIn.nextLine();
-
-                    out.println(userInput);
-
-                    System.out.println(">> " + in.nextLine());
-                }
-            } catch (IOException ex) {
-                System.out.println("ERROR: " + ex.getMessage());
-            }
-        }}}
-
-    
-        
+            }}}}
