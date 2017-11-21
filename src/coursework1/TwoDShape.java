@@ -22,19 +22,3 @@ public abstract class TwoDShape extends Shape {
     
     public abstract double getPerimeter();
 }
-
-
-/*
-    public TwoDShape(int numberOfSides, String name) {
-        super(numberOfSides, name);
-    }
-    
-     public double getArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public double getPerimeter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
-*/

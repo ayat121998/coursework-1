@@ -19,12 +19,9 @@ public class Triangle extends TwoDShape {
         super(name,3);
         _side1=side1;
         _side2=side2;
-        _base=base;
+        _base=base; 
         _height=height;
     }
-
- 
-    
     
      @Override
     public void displayDescription() {
@@ -45,5 +42,3 @@ public class Triangle extends TwoDShape {
 
   
 }
-    
-
