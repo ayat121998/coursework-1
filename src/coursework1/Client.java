@@ -9,6 +9,7 @@ package coursework1;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -209,9 +210,9 @@ public class Client  {
             } else {
                 System.out.println("Please enter a valid input");
                 System.out.println();
-            }}}}
-         /*   try {
-                final Socket client = new Socket("127.0.0.1", 5555);
+            }
+            try {
+                final Socket Client = new Socket("127.0.0.1", 5555);
 
                 final PrintWriter out = new PrintWriter(client.getOutputStream(), true);
 
@@ -231,7 +232,7 @@ public class Client  {
             } catch (IOException ex) {
                 System.out.println("ERROR: " + ex.getMessage());
             }
-        }*/
+        }}}
 
     
         
