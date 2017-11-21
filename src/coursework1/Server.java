@@ -30,22 +30,36 @@ import java.util.logging.Logger;
  */
 public class Server {
 
-    private int _port;
+   private int _port;
 
     Server(int port) {
         _port = port;
     }
 
-public static void main(String[] args) throws IOException {
+    public void start() {
+
         try {
-            
+            //final ServerSocket server = new ServerSocket(_port);
+
+            //final Socket clientConnection = server.accept();
+            //final PrintWriter out = new PrintWriter(clientConnection.getOutputStream(), true);
             InputStream in = new ServerSocket(8000).accept().getInputStream();
-         
+            //final Scanner in = new Scanner(clientConnection.getInputStream());
 
             Object object = new ObjectInputStream(in).readObject();
             System.out.println(object.getClass() + ": " + object);
             
-      
+            //ObjectOutputStream outputToClient = new ObjectOutputStream(clientConnection.getOutputStream());
+            //ObjectInputStream fromClient = new ObjectInputStream(clientConnection.getInputStream());
+
+            /*
+            while (in.hasNext()) {
+                final String clientRequest = in.nextLine();
+                if (!clientRequest.isEmpty()) {
+                    out.println("Request received '" + clientRequest.toUpperCase() + "'");
+                }
+            }
+             */
             ArrayList<Shape> castedObject = (ArrayList<Shape>) object;
             for (Shape s : castedObject) {
                 s.printInfo();

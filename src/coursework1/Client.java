@@ -17,15 +17,16 @@ import java.util.Scanner;
  *
  * @author Administrator
  */
-//public class Client  {
+public class Client  {
 
- /*private int port;
+ private int port;
     private String host;
 
     Client(String host, int port) {
         this.port = port;
         this.host = host;
     }
+
     ObjectOutputStream outputToServer = null;
     ObjectInputStream fromServer = null;
 
@@ -208,7 +209,7 @@ import java.util.Scanner;
             } else {
                 System.out.println("Please enter a valid input");
                 System.out.println();
-            }
+            }}}}
          /*   try {
                 final Socket client = new Socket("127.0.0.1", 5555);
 
