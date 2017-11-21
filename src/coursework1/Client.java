@@ -5,42 +5,43 @@
  */
 package coursework1;
 
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import java.io.ObjectInputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 /**
  *
  * @author Administrator
  */
-public class Client {
+//public class Client  {
 
-
-    private int port;
+ /*private int port;
     private String host;
 
     Client(String host, int port) {
         this.port = port;
         this.host = host;
     }
+    ObjectOutputStream outputToServer = null;
+    ObjectInputStream fromServer = null;
 
-    public void start() {
-       
-        
+    public void start() throws IOException {
         int option = 0;
-
-        System.out.println("Shapes Application");
-
-        while (option != 4) {
+        ArrayList<Shape> Shapes = new ArrayList<Shape>();
+        System.out.println("Welcome to the shapes application. Please look at the menu and select the option you would like.");
+        Socket client = new Socket("localhost", 8000);
+        while (option != 5) {
 
             System.out.println("Enter a option");
             System.out.println("1. 2D Shapes");
             System.out.println("2. 3D Shapes");
-            System.out.println("3. Receive Shapes from Server");
-            System.out.println("4. Exit");
+            System.out.println("3. Send Shapes");
+            System.out.println("4. Receive Shapes from Server");
+            System.out.println("5. Exit");
             Scanner scanner = new Scanner(System.in);
 
             option = scanner.nextInt();
@@ -184,7 +185,12 @@ public class Client {
                 }
                 System.exit(0);
 
-            } else if (option == 3) {
+            } 
+            else if (option == 3) {
+                System.out.println("You have selected send shapes");
+                System.out.println("");
+            }
+                else if (option == 4) {
                 //Create a line that will allow the client to receive data from the files about shapes stored.
                 System.out.println("Shape to be received:");
                 System.out.println("1. All");
@@ -196,14 +202,14 @@ public class Client {
                 System.out.println("4. Exit");
                 String receive = scanner.next();
 
-            } else if (option == 4) {
+            } else if (option == 5) {
                 System.exit(0);
 
             } else {
                 System.out.println("Please enter a valid input");
                 System.out.println();
             }
-            try {
+         /*   try {
                 final Socket client = new Socket("127.0.0.1", 5555);
 
                 final PrintWriter out = new PrintWriter(client.getOutputStream(), true);
@@ -224,8 +230,7 @@ public class Client {
             } catch (IOException ex) {
                 System.out.println("ERROR: " + ex.getMessage());
             }
-        }
+        }*/
 
-    }
-}
-      
+    
+        

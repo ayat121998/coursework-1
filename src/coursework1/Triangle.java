@@ -10,13 +10,13 @@ package coursework1;
  * @author M00557670
  */
 public class Triangle extends TwoDShape {
-    private final double _side1;
-    private final double _side2;
-    private final double _base;
-    private final double _height;
+    private  double _side1;
+    private  double _side2;
+    private  double _base;
+    private  double _height;
 
     public Triangle(String name, double side1, double side2, double base, double height){
-        super(3, name);
+        super(name,3);
         _side1=side1;
         _side2=side2;
         _base=base;
@@ -40,6 +40,10 @@ public class Triangle extends TwoDShape {
     public double getPerimeter(){
         return _side1+_side2+_base;
     }
+
+
+
+  
 }
     
 

@@ -13,7 +13,20 @@ package coursework1;
  */
 public abstract class ThreeDShape extends Shape {
 
-    public ThreeDShape(int numberOfSides, String name) {
+    public ThreeDShape(String name, int noOfSides) {
+        super(name, noOfSides);
+    }
+   
+    
+    
+    public abstract double getSA();
+    
+    public abstract double getVolume();
+}
+
+
+
+   /* public ThreeDShape(int numberOfSides, String name) {
         super(numberOfSides, name);
         
         
@@ -27,3 +40,4 @@ public abstract class ThreeDShape extends Shape {
     }
     
 }
+*/

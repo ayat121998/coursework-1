@@ -11,10 +11,10 @@ package coursework1;
  */
 public class Sphere extends ThreeDShape {
 
-    private final double _radius;
+    private  double _radius;
 
     public Sphere(String name, double radius) {
-        super(1, name);
+        super(name,1);
         _radius = radius;
     }
 

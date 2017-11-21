@@ -3,20 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package coursework1;
 
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import coursework1.Shape;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 
@@ -25,8 +28,42 @@ import java.util.Scanner;;
  *
  * @author Administrator
  */
-public class Server  {
-      private static ArrayList<Shape> shapesArray = new ArrayList<Shape>();
+public class Server {
+
+    private int _port;
+
+    Server(int port) {
+        _port = port;
+    }
+
+public static void main(String[] args) throws IOException {
+        try {
+            
+            InputStream in = new ServerSocket(8000).accept().getInputStream();
+         
+
+            Object object = new ObjectInputStream(in).readObject();
+            System.out.println(object.getClass() + ": " + object);
+            
+      
+            ArrayList<Shape> castedObject = (ArrayList<Shape>) object;
+            for (Shape s : castedObject) {
+                s.printInfo();
+                System.out.println(s);
+            }
+        } catch (IOException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
+
+
+
+
+
+  /*    private static ArrayList<Shape> shapesArray = new ArrayList<Shape>();
 
     private static ObjectOutputStream shapeToClient;
     private static ObjectInputStream shapeFromClient;
@@ -121,3 +158,4 @@ public class Server  {
     }
 }
 */
+    

@@ -10,9 +10,9 @@ package coursework1;
  * @author M00557670
  */
 public class Circle extends TwoDShape {
-    private final double _radius;
+    private  double _radius;
     public Circle(String name, double radius) {
-        super(1, name);
+        super( name, 1);
         _radius = radius;
         
         

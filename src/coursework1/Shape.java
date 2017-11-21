@@ -14,7 +14,34 @@ import java.io.Serializable;
  * @author M00557670
  */
 public abstract class Shape implements Serializable{
-   final int _numberOfSides;
+    private int noOfSides;
+    private String name;
+
+    public int getNoOfSides() {
+        return noOfSides;
+    }
+
+    public Shape(String name, int noOfSides) {
+        this.name = name;
+        this.noOfSides = noOfSides;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void displayDescription() {
+        System.out.println("I'm a shape named " + name);
+    }
+
+    public void printInfo() {
+        System.out.println("I'm a shape named " + name);
+    }
+
+}
+
+
+/*   final int _numberOfSides;
    final String _name;
    
    public Shape(int numberOfSides, String name){
@@ -29,3 +56,4 @@ public abstract class Shape implements Serializable{
     
     
 }
+*/

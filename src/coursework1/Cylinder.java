@@ -10,11 +10,11 @@ package coursework1;
  * @author M00557670
  */
 public class Cylinder extends ThreeDShape{
-    private final double _radius;
-    private final double _height;
+    private double _radius;
+    private double _height;
 
     public Cylinder(String name, double radius, double height) {
-        super(2, name);
+        super(name,2);
         _radius = radius;
         _height = height;
     
